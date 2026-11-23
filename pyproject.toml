@@ -1,0 +1,36 @@
+[project]
+name = "production-ai-agents-coursework"
+version = "0.1.0"
+description = "Homework and capstone proposal for Production AI Agents for Generative Media (DataTalks.Club x Nebius, 2026 cohort)"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+# Only for running a model in-process on a GPU (JupyterLab / DevLab). Pins match the course repo.
+gpu = [
+    "torch==2.13.0",
+    "torchvision==0.28.0",
+    "diffusers==0.39.0",
+    "transformers==5.13.1",
+    "accelerate==1.14.0",
+    "sentencepiece>=0.2,<0.3",
+    "protobuf>=5,<8",
+]
+dev = ["pytest>=8.0,<9", "ruff>=0.4,<1"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["hw01-gpu-media-worker/tests"]
+pythonpath = ["hw01-gpu-media-worker"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["backends", "costs", "generate"]

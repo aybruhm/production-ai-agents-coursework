@@ -221,3 +221,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Scratch runs. Copy the run you submit into hwNN-*/results/<run_id>/ to commit it.
+runs/

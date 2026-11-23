@@ -57,7 +57,7 @@ cd hw01-gpu-media-worker
    ```bash
    uv run python costs.py results/<run_id>/metrics.json --stopped-at "$STOPPED"
    ```
-6. Paste `cost_report.md` into [Results](#results) and fill in the answers.
+6. Paste `cost_report.md` into [Results](#results).
 
 **Local path (JupyterLab / DevLab):** `uv sync --extra gpu --extra dev`, then `uv run python generate.py --backend local --startup-s <seconds from Create to a usable kernel>`. Use the regular DevLab price in `pricing.toml`. Delete the DevLab afterwards: a stopped one still bills its disk.
 
@@ -96,20 +96,3 @@ Run folder: [`results/20261123-sana-l40s/`](results/20261123-sana-l40s/) (assets
 The median generation time came out at 3.184 s per 512x512 image, which is well above the 1.26 s threshold worked out in the section above. Because of this, the marginal cost per asset on the L40S ($0.000663) is about 2.5 times the fal price ($0.000262), so self-hosting never breaks even at this size and the breakeven N is 0. The first request took 6.99 s because of warm-up, which is why I report the median rather than the mean.
 
 The fixed time of 503.2 s needs some explanation. Only 6.5 s of it is the time from Create to the first answer from `/v1/models`, which is a lot shorter than a cold start would normally take, so I believe the Endpoint was already up by the time I recorded the Create time. The other 496.7 s is idle time between the last asset and clicking Stop, which the Endpoint still bills for. This means F here is mostly idle time, and a run with a true cold start would have a higher F. It would not change the breakeven, since c is already above the API price.
-
-## Answers
-
-Platform form (graded):
-
-| # | Question | Answer |
-|---|---|---|
-| 1 | Creative idea | See [The idea](#the-idea) |
-| 2 | Model | Sana 1600M (`Efficient-Large-Model/Sana_1600M_1024px_diffusers`) |
-| 3 | How run | Endpoint called from my laptop |
-| 4 | GPU | NVIDIA L40S (`gpu-l40s-a`, `1gpu-8vcpu-32gb`, preemptible, eu-north1) |
-| 5 | Median generation time per asset, s | 3.184 |
-| 6 | Marginal compute cost per asset `c`, USD | 0.000663 |
-| 7 | Per-call API compared | fal `fal-ai/sana`, $0.000262 per asset ($0.001 per megapixel at 512x512), https://fal.ai/models/fal-ai/sana |
-| 8 | Self-host breakeven N | 0 (never: the API is cheaper per asset) |
-
-The repo's `homework.md` also asks for modality and projected cost per asset at N = 1000. The modality is image, and the projected cost per asset at N = 1000 is $0.000767.

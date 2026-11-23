@@ -1,0 +1,36 @@
+[run]
+# "endpoint": your laptop calls a Nebius Endpoint (form answer: "Endpoint, called from my laptop")
+# "local":    the model runs in this Python process on a GPU (form answer: "JupyterLab on a GPU")
+backend = "endpoint"
+# What you deployed on Nebius. The client can't see the Endpoint's GPU, so record it here by hand.
+gpu = "L40S"
+platform = "gpu-l40s-a"
+preset = "1gpu-8vcpu-32gb"
+region = "eu-north1"
+billing = "preemptible"    # "preemptible" or "regular"; must match the price you put in pricing.toml
+
+[model]
+# One of the nine template models on the submission form. The endpoint backend speaks the
+# OpenAI-style images API, which is what the Sana template serves.
+id = "Efficient-Large-Model/Sana_1600M_1024px_diffusers"
+size = "512x512"                                         # each side a multiple of 32
+num_inference_steps = 20
+guidance_scale = 4.5
+negative_prompt = ""
+seed = 7                                                 # asset i uses seed + i, so every asset is reproducible and recorded
+
+[prompt]
+# Replace with your creative idea. Each subject fills {subject}; the count sets N for the run.
+template = "A watercolor storybook illustration of {subject}, soft winter light, warm colors, no people, no text"
+subjects = [
+    "a brass telescope on a snowy hill under a starry sky",
+    "a red wooden sled leaning against a pine tree",
+    "a steaming mug of cocoa on a frosted windowsill",
+    "a lantern glowing beside a frozen pond",
+    "a stack of wrapped presents tied with green ribbon",
+    "a small cabin with smoke rising from the chimney",
+    "a pair of ice skates hanging from a fence post",
+    "a snow globe with a tiny village inside",
+    "a basket of pine cones and holly by a fireplace",
+    "a paper star ornament hanging in a dark window",
+]

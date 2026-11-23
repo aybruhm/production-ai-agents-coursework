@@ -1,0 +1,24 @@
+# NOTE: Prices change (spot every 15 minutes), so re-read both before you submit.
+
+[gpu]
+# The price per hour YOUR run paid: the preemptible price for your GPU and region at the time
+# of the run, or the regular price on a DevLab. Must match run.toml [run].billing.
+price_per_hour_usd = 0.7492
+basis = "preemptible"
+gpu = "L40S"
+region = "eu-north1"
+source = "https://docs.nebius.com/compute/resources/pricing"
+read_at = "2026-11-11"                                       # value quoted in lesson 01 for the Sana template's L40S; re-check
+
+[api]
+# The per-call API you compare against: the same model if anyone sells it, else the closest.
+# unit = "asset"        -> unit_price_usd is the price per asset
+# unit = "megapixel"    -> per-asset price = width x height / 1e6 x unit_price_usd (from run.toml size)
+# unit = "video_second" -> per-asset price = video_seconds_per_asset x unit_price_usd
+service = "fal"
+model = "fal-ai/sana"
+unit = "megapixel"
+unit_price_usd = 0.001
+url = "https://fal.ai/models/fal-ai/sana"
+read_at = "2026-11-23"
+# video_seconds_per_asset = 5.0625   # e.g. Wan2.2: 81 frames / 16 fps

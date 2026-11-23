@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "backend": "endpoint",
+  "run": {
+    "backend": "endpoint",
+    "gpu": "L40S",
+    "platform": "gpu-l40s-a",
+    "preset": "1gpu-8vcpu-32gb",
+    "region": "eu-north1",
+    "billing": "preemptible"
+  },
+  "model": {
+    "id": "Efficient-Large-Model/Sana_1600M_1024px_diffusers",
+    "size": "512x512",
+    "num_inference_steps": 20,
+    "guidance_scale": 4.5,
+    "negative_prompt": "",
+    "seed": 7
+  },
+  "prompt_template": "A watercolor storybook illustration of {subject}, soft winter light, warm colors, no people, no text",
+  "n_requested": 10,
+  "timeline_utc": {
+    "endpoint_created_at": "2026-11-23T22:49:06+00:00",
+    "script_started_at": "2026-11-23T22:49:11.547274+00:00",
+    "ready_at": "2026-11-23T22:49:12.547368+00:00",
+    "last_response_at": "2026-11-23T22:49:48.349288+00:00"
+  },
+  "startup_s": null,
+  "ready_wait_s": 0.999884030999965,
+  "load_s": null,
+  "create_to_ready_s": 6.547368,
+  "ready_to_first_request_s": 2.4699984351173043e-06,
+  "fixed_s": 6.547368,
+  "fixed_basis": "endpoint created_at -> /v1/models ready",
+  "latency_s": [
+    6.9939,
+    3.1679,
+    3.2678,
+    3.1744,
+    3.0745,
+    3.1836,
+    3.1836,
+    3.1549,
+    3.4,
+    3.1873
+  ],
+  "median_latency_s": 3.1836,
+  "assets": [
+    {
+      "index": 0,
+      "file": "assets/asset-00.png",
+      "prompt": "A watercolor storybook illustration of a brass telescope on a snowy hill under a starry sky, soft winter light, warm colors, no people, no text",
+      "seed": 7,
+      "latency_s": 6.9939,
+      "bytes": 528300,
+      "sha256": "24705b84791d9fe78d0efba51938a9cd635cc79b30dc8a1688e0fb15a7f22608"
+    },
+    {
+      "index": 1,
+      "file": "assets/asset-01.png",
+      "prompt": "A watercolor storybook illustration of a red wooden sled leaning against a pine tree, soft winter light, warm colors, no people, no text",
+      "seed": 8,
+      "latency_s": 3.1679,
+      "bytes": 412202,
+      "sha256": "1dcde623c42261f6b11718dfa1d1be359a82e4b1bee3e335d185301aada42305"
+    },
+    {
+      "index": 2,
+      "file": "assets/asset-02.png",
+      "prompt": "A watercolor storybook illustration of a steaming mug of cocoa on a frosted windowsill, soft winter light, warm colors, no people, no text",
+      "seed": 9,
+      "latency_s": 3.2678,
+      "bytes": 448017,
+      "sha256": "ddfff0326774326d22b38fc3878fd4a47322218ee2f459794396cfc1a49b5f4d"
+    },
+    {
+      "index": 3,
+      "file": "assets/asset-03.png",
+      "prompt": "A watercolor storybook illustration of a lantern glowing beside a frozen pond, soft winter light, warm colors, no people, no text",
+      "seed": 10,
+      "latency_s": 3.1744,
+      "bytes": 518527,
+      "sha256": "aef8c744d39e8afce2ff7b270c9181dab03be45d8f9923bf9ad9271e9e5f6d18"
+    },
+    {
+      "index": 4,
+      "file": "assets/asset-04.png",
+      "prompt": "A watercolor storybook illustration of a stack of wrapped presents tied with green ribbon, soft winter light, warm colors, no people, no text",
+      "seed": 11,
+      "latency_s": 3.0745,
+      "bytes": 276236,
+      "sha256": "d380a33ea5f3b18a14d233a3aac0cf5fb66d2f121f1befca766f14a439b98bf9"
+    },
+    {
+      "index": 5,
+      "file": "assets/asset-05.png",
+      "prompt": "A watercolor storybook illustration of a small cabin with smoke rising from the chimney, soft winter light, warm colors, no people, no text",
+      "seed": 12,
+      "latency_s": 3.1836,
+      "bytes": 330036,
+      "sha256": "b40d27fec4dd56f0eb5a326c57f7bc7590fee638e446863820996eb6e350e38a"
+    },
+    {
+      "index": 6,
+      "file": "assets/asset-06.png",
+      "prompt": "A watercolor storybook illustration of a pair of ice skates hanging from a fence post, soft winter light, warm colors, no people, no text",
+      "seed": 13,
+      "latency_s": 3.1836,
+      "bytes": 370308,
+      "sha256": "56848dfe76c658c0629c59ff2ab7eb234a4cfb179ffaa39982918bcf9bde6cf3"
+    },
+    {
+      "index": 7,
+      "file": "assets/asset-07.png",
+      "prompt": "A watercolor storybook illustration of a snow globe with a tiny village inside, soft winter light, warm colors, no people, no text",
+      "seed": 14,
+      "latency_s": 3.1549,
+      "bytes": 369198,
+      "sha256": "1f69a8fc33f5844100bb417b6e1921abd02eabb5fbd4d6660c3c41db9b3b874d"
+    },
+    {
+      "index": 8,
+      "file": "assets/asset-08.png",
+      "prompt": "A watercolor storybook illustration of a basket of pine cones and holly by a fireplace, soft winter light, warm colors, no people, no text",
+      "seed": 15,
+      "latency_s": 3.4,
+      "bytes": 525147,
+      "sha256": "a8ff0ed3ea469999faee549a41cd36836703643a5e4bf6f7454350a006edd352"
+    },
+    {
+      "index": 9,
+      "file": "assets/asset-09.png",
+      "prompt": "A watercolor storybook illustration of a paper star ornament hanging in a dark window, soft winter light, warm colors, no people, no text",
+      "seed": 16,
+      "latency_s": 3.1873,
+      "bytes": 359112,
+      "sha256": "585fb44bce96f60ddb867bf57bb3a04f2fcdd464a4647804b78de136510d6f56"
+    }
+  ],
+  "env": {
+    "base_url_host": "port8000-zmphna4cp3z465t.tunnel.applications.eu-north1.nebius.cloud"
+  },
+  "error": null
+}

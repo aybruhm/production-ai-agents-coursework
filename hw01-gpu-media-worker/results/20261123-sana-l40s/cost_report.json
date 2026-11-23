@@ -1,0 +1,39 @@
+{
+  "price_per_hour_usd": 0.7492,
+  "fixed_s": 503.19808246999844,
+  "median_latency_s": 3.1836,
+  "marginal_usd": 0.0006625425333333333,
+  "fixed_usd": 0.1047211120518119,
+  "per_asset_usd": {
+    "1": 0.10538365458514523,
+    "10": 0.011134653738514522,
+    "100": 0.0017097536538514522,
+    "1000": 0.0007672636453851453
+  },
+  "api_price_usd": 0.000262144,
+  "breakeven_assets": 0,
+  "this_run_usd": 0.11216897168514522,
+  "notes": [
+    "fixed time basis: endpoint created_at -> /v1/models ready",
+    "includes 496.7 s idle after the last asset until Stop"
+  ],
+  "pricing": {
+    "gpu": {
+      "price_per_hour_usd": 0.7492,
+      "basis": "preemptible",
+      "gpu": "L40S",
+      "region": "eu-north1",
+      "source": "https://docs.nebius.com/compute/resources/pricing",
+      "read_at": "2026-11-11"
+    },
+    "api": {
+      "service": "fal",
+      "model": "fal-ai/sana",
+      "unit": "megapixel",
+      "unit_price_usd": 0.001,
+      "url": "https://fal.ai/models/fal-ai/sana",
+      "read_at": "2026-11-23"
+    }
+  },
+  "stopped_at": "2026-11-23T22:58:05Z"
+}
